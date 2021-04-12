@@ -42,6 +42,36 @@
       <path value="$PROJECT_DIR$/server_api/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/server_api/vendor/doctrine/annotations" />
       <path value="$PROJECT_DIR$/server_api/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/server_api/vendor/friendsofphp/proxy-manager-lts" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/proxy-manager-bridge" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/server_api/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/server_api/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/server_api/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/server_api/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/server_api/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-guard" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2">

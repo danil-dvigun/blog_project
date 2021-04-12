@@ -46,6 +46,36 @@
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/friendsofphp/proxy-manager-lts" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/stopwatch" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/doctrine-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/proxy-manager-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/doctrine-migrations-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/migrations" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/laminas/laminas-zendframework-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/laminas/laminas-code" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/laminas/laminas-eventmanager" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/maker-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-http" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-core" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-csrf" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/property-info" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/property-access" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-guard" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
