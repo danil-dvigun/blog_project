@@ -64,7 +64,6 @@
       <path value="$PROJECT_DIR$/server_api/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/server_api/vendor/laminas/laminas-eventmanager" />
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/maker-bundle" />
-      <path value="$PROJECT_DIR$/server_api/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-core" />
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-csrf" />
@@ -72,6 +71,7 @@
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/property-access" />
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-bundle" />
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-guard" />
+      <path value="$PROJECT_DIR$/server_api/vendor/nikic/php-parser" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2">

@@ -68,7 +68,6 @@
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/laminas/laminas-code" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/maker-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-http" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-core" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-csrf" />
@@ -76,6 +75,7 @@
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/property-access" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-guard" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/nikic/php-parser" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
