@@ -76,6 +76,8 @@
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/security-guard" />
       <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/symfony/validator" />
+      <excludeFolder url="file://$MODULE_DIR$/server_api/vendor/rbdwllr/reallysimplejwt" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

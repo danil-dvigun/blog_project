@@ -72,6 +72,8 @@
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-bundle" />
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/security-guard" />
       <path value="$PROJECT_DIR$/server_api/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/server_api/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/server_api/vendor/rbdwllr/reallysimplejwt" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2">
