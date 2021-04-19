@@ -1,6 +1,12 @@
-#row{
-    border: 1px solid red;
-}
+/*#container{
+    padding: 0px;
+}*/
 #col{
     border: 1px solid green;
+    padding: 0px;
 }
+#main{
+    height: 90vh;
+}
+
+

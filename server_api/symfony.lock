@@ -85,6 +85,21 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
     },
+    "jms/metadata": {
+        "version": "2.5.0"
+    },
+    "jms/serializer": {
+        "version": "3.12.2"
+    },
+    "jms/serializer-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "384cec52df45f3bfd46a09930d6960a58872b268"
+        }
+    },
     "laminas/laminas-code": {
         "version": "4.1.0"
     },
@@ -96,6 +111,9 @@
     },
     "nikic/php-parser": {
         "version": "v4.10.4"
+    },
+    "phpstan/phpdoc-parser": {
+        "version": "0.4.14"
     },
     "psr/cache": {
         "version": "1.0.1"

@@ -17,28 +17,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class AuthController extends AbstractController
 {
     /**
-     * @Route("/api/mypost", name="withAuth", methods={"POST"})
-     */
-    public function withAuth(Request $request, UserPasswordEncoderInterface $encoder): Response
-    {
-        $response = new Response();
-        $response->setContent(json_encode(['user' => "withAuth"]));
-        $response->setStatusCode(Response::HTTP_OK );
-        return $response;
-    }
-
-    /**
-     * @Route("/posts", name="withoutAuth", methods={"POST"})
-     */
-    public function withoutAuth(Request $request, UserPasswordEncoderInterface $encoder): Response
-    {
-        $response = new Response();
-        $response->setContent(json_encode(['user' => "withoutAuth"]));
-        $response->setStatusCode(Response::HTTP_OK );
-        return $response;
-    }
-
-    /**
      * @Route("/login", name="login", methods={"POST"})
      */
     public function login(Request $request, UserPasswordEncoderInterface $encoder): Response

@@ -74,6 +74,10 @@
       <path value="$PROJECT_DIR$/server_api/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/server_api/vendor/symfony/validator" />
       <path value="$PROJECT_DIR$/server_api/vendor/rbdwllr/reallysimplejwt" />
+      <path value="$PROJECT_DIR$/server_api/vendor/jms/serializer-bundle" />
+      <path value="$PROJECT_DIR$/server_api/vendor/jms/serializer" />
+      <path value="$PROJECT_DIR$/server_api/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/server_api/vendor/phpstan/phpdoc-parser" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2">

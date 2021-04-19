@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -45,6 +47,16 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $salt;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Post::class, mappedBy="owner", orphanRemoval=true)
+     */
+    private $Posts;
+
+    public function __construct()
+    {
+        $this->Posts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -139,6 +151,36 @@ class User implements UserInterface
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Post[]
+     */
+    public function getPosts(): Collection
+    {
+        return $this->Posts;
+    }
+
+    public function addPost(Post $post): self
+    {
+        if (!$this->Posts->contains($post)) {
+            $this->Posts[] = $post;
+            $post->setOwner($this);
+        }
+
+        return $this;
+    }
+
+    public function removePost(Post $post): self
+    {
+        if ($this->Posts->removeElement($post)) {
+            // set the owning side to null (unless already changed)
+            if ($post->getOwner() === $this) {
+                $post->setOwner(null);
+            }
+        }
 
         return $this;
     }
