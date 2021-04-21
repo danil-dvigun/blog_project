@@ -5,7 +5,14 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "index-bundle.js"
+        filename: "index-bundle.js",
+        publicPath: "/"
+    },
+    devServer:{
+        historyApiFallback: true,
+        proxy: {
+            '/api': 'http://127.0.0.1:8000',
+        }
     },
     module: {
         rules: [
@@ -25,9 +32,4 @@ module.exports = {
             template: "./src/index.html"
         })
     ],
-    devServer: {
-        historyApiFallback: true,
-        contentBase: './',
-        hot: true
-    },
 };

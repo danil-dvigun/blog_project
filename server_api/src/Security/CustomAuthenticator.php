@@ -16,6 +16,8 @@ use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 
 class CustomAuthenticator extends AbstractGuardAuthenticator
 {
+    public const LOGIN_ROUTE = ['myPost'];
+
     /**
      * @var EntityManagerInterface
      */
@@ -27,7 +29,9 @@ class CustomAuthenticator extends AbstractGuardAuthenticator
     }
     public function supports(Request $request)
     {
-        return stristr($request->getPathInfo(), '/api/');
+
+        /*return stristr($request->getPathInfo(), '/api/');*/
+        return in_array($request->attributes->get('_route'), self::LOGIN_ROUTE);  /*self::LOGIN_ROUTE === $request->attributes->get('_route');*/
     }
 
     public function getCredentials(Request $request)

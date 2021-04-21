@@ -19,7 +19,7 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
-    public function testFindAll(): array
+    public function FindAllSQL(): array
     {
         $conn = $this->getEntityManager()->getConnection();
 

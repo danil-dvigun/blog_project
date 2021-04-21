@@ -1,4 +1,10 @@
 #header{
-    background: #27aedb;
+    /*background: #9080e2;*/
     height: 60px;
+}
+#leftBlock{
+    float: left;
+}
+#rightBlock{
+    float: right;
 }

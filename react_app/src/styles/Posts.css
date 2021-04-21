@@ -1,0 +1,13 @@
+#content{
+    border: 1px solid red;
+    margin: 5px;
+    position: absolute;
+    height: 90vh;
+    overflow: auto;
+    width: 99%;
+}
+
+.card{
+    float: left;
+    margin: 10px;
+}

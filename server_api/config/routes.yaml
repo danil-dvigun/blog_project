@@ -10,5 +10,5 @@ registration:
   controller: App\Controller\AuthController::registration
 
 posts:
-  path: /posts
+  path: /api/posts
   controller: App\Controller\PostController::posts
