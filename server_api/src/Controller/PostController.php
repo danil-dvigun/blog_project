@@ -2,22 +2,36 @@
 
 namespace App\Controller;
 
+use App\Dto\Response\Transformer\PostResponseDtoTransformer;
 use App\Repository\PostRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PostController extends AbstractController
 {
-    public function posts(PostRepository $postRepository): Response
+    private PostResponseDtoTransformer $postResponseDtoTransformer;
+
+    /**
+     * PostController constructor.
+     * @param PostResponseDtoTransformer $postResponseDtoTransformer
+     */
+    public function __construct(PostResponseDtoTransformer $postResponseDtoTransformer)
+    {
+        $this->postResponseDtoTransformer = $postResponseDtoTransformer;
+    }
+
+
+    public function posts(PostRepository $postRepository, UserRepository $userRepository): Response
     {
 
-
-        $posts = $postRepository->FindAllSQL();
-
+        $users = $userRepository->findAll();
+        /*$posts = $postRepository->findAll();*/
+        $test = $this->postResponseDtoTransformer->transformFromObjects($users);
 
         $response = new Response();
-        $response->setContent(json_encode(["data"=>$posts]));
+        $response->setContent(json_encode($test));
         $response->setStatusCode(Response::HTTP_OK );
         return $response;
         /*return $this->json([

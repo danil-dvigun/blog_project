@@ -2,11 +2,11 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 login:
-  path: /login
+  path: /api/login
   controller: App\Controller\AuthController::login
 
 registration:
-  path: /registration
+  path: /api/registration
   controller: App\Controller\AuthController::registration
 
 posts:

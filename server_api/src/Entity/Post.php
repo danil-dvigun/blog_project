@@ -31,7 +31,7 @@ class Post
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $discription;
+    private $description;
 
     /**
      * @ORM\Column(type="text")
@@ -67,14 +67,14 @@ class Post
         return $this;
     }
 
-    public function getDiscription(): ?string
+    public function getDescription(): ?string
     {
-        return $this->discription;
+        return $this->description;
     }
 
-    public function setDiscription(?string $discription): self
+    public function setDescription(?string $description): self
     {
-        $this->discription = $discription;
+        $this->description = $description;
 
         return $this;
     }
