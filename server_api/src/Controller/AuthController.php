@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
+use Doctrine\DBAL\Exception;
 use Doctrine\ORM\EntityManagerInterface;
 use ErrorException;
 use ReallySimpleJWT\Token;
@@ -27,7 +29,7 @@ class AuthController extends AbstractController
 
             $verifyPassword = password_verify($userData->password . $user->getSalt(), $user->getPassword());
             if(!$verifyPassword){
-                throw new ErrorException("Wrong Password!", 404);
+                throw new ErrorException("Wrong Password!", 400);
             }
 
             $userId = $user->getId();
@@ -38,7 +40,7 @@ class AuthController extends AbstractController
             $token = Token::create($userId, $secret, $expiration, $issuer);
 
             $response = new Response();
-            $response->headers->set('TOKEN', $token);
+            $response->headers->set('Authorization', $token);
             $response->setContent(json_encode(['user' => $user->getName()]));
             $response->setStatusCode(Response::HTTP_OK );
             return $response;
@@ -55,12 +57,17 @@ class AuthController extends AbstractController
     /**
      * @Route("/registration", name="registration", methods={"POST"})
      */
-    public function registration(Request $request, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $encoder): Response
+    public function registration(Request $request, EntityManagerInterface $entityManager, UserRepository &$userRepository): Response
     {
         try{
             $userData = json_decode($request->getContent());
-            $user = new User();
 
+            $checkUser = $userRepository->findBy(array('email' => $userData->email));
+            if(count($checkUser) > 0){
+                throw new Exception("Such mail is already registered", 400);
+            }
+
+            $user = new User();
             $user->setName($userData->name);
             $user->setEmail($userData->email);
 
@@ -83,7 +90,7 @@ class AuthController extends AbstractController
             $token = Token::create($userId, $secret, $expiration, $issuer);
 
             $response = new Response();
-            $response->headers->set('TOKEN', $token);
+            $response->headers->set('Authorization', $token);
             //$response->setContent(json_encode(['result' => "success", 'token' => $token]));
             $response->setContent(json_encode(['user' => $user->getName()]));
             $response->setStatusCode(Response::HTTP_OK );
@@ -93,7 +100,7 @@ class AuthController extends AbstractController
             error_log($error->getMessage());
             $response = new Response();
             $response->setContent(json_encode(['error' => $error->getMessage()]));
-            $response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR );
+            $response->setStatusCode($error->getCode());
             return $response;
         }
     }

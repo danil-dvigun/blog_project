@@ -10,7 +10,7 @@ import Header from "./Header"
 import MyPosts from "./MyPosts";
 import AddPost from "./AddPost";
 import Posts from "./Posts";
-
+import Post from "./Post"
 
 class Main extends Component{
 
@@ -34,6 +34,7 @@ class Main extends Component{
                                 <Route exact path="/" component={Posts} />
                                 <Route exact path="/myPosts" component={MyPosts} />
                                 <Route  exact path="/addPost" component={AddPost} />
+                                <Route  exact path="/post/:id" component={Post} />
                             </Switch>
 
 

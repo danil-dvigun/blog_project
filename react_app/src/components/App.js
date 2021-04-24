@@ -17,7 +17,7 @@ import Main from "./Main";
 import MyPosts from "./MyPosts";
 import AddPost from "./AddPost";
 import NoMatch from "./NoMatch";
-
+import Post from "./Post";
 
 class App extends Component{
     render(){
@@ -25,7 +25,6 @@ class App extends Component{
 
             <BrowserRouter>
                 <div>
-
                     <Switch>
                         {/*<Route exact path="/">
                             <Main />
@@ -36,37 +35,23 @@ class App extends Component{
                         <Route path="/NotFound">
                             <NoMatch />
                         </Route>
-                        <Route  path="/" render={() => (
+                        <Route path="/">
+                            <Main />
+                        </Route>
+                        <Route path="/post/:id">
+                            <Post />
+                        </Route>
+                        {/*<Route  path="/" render={() => (
                             <div>
                                 <Route  path="/" component={Main} />
                                 <Route  path="/myPosts" component={MyPosts} />
                                 <Route  path="/addPost" component={AddPost} />
                             </div>
-                        )}/>
+                        )}/>*/}
 
                     </Switch>
                 </div>
-
             </BrowserRouter>
-            /*<BrowserRouter>
-                <div>
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/about" component={About} />
-                        <Route path="/products" component={Products} />
-                        <Route component={NotFound} />
-                        {/!*<Route exact path="/" component={Main} />
-                        <Route path="/authorization" component={Authorization} />*!/}
-                        {/!*<Route exact path="/">
-                            <Main />
-                        </Route>
-                        <Route path="/authorization">
-                            <Authorization />
-                        </Route>*!/}
-                    </Switch>
-                </div>
-            </BrowserRouter>*/
-
         )
     }
 }

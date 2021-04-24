@@ -4,9 +4,24 @@ import "../styles/Header.css"
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { LinkContainer } from 'react-router-bootstrap';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
 class Header extends Component{
+    constructor(props) {
+        super(props);
+
+        this.handleCheck = this.handleCheck.bind(this);
+    }
+
+    handleCheck() {
+        if(localStorage.getItem('Authorization') == null){
+            alert("You must be logged in to add posts!")
+        }
+        else{
+            this.props.history.push('/addPost')
+        }
+    }
+
     render(){
         return(
             <div id="header">
@@ -18,12 +33,13 @@ class Header extends Component{
                         <LinkContainer to="/myPosts">
                             <Button>My posts</Button>
                         </LinkContainer>
-                        <LinkContainer to="/addPost">
-                            <Button>Add post</Button>
+                        <Button onClick={this.handleCheck}>Add post</Button>
+                        <LinkContainer to="/post/1">
+                            <Button>My</Button>
                         </LinkContainer>
-                        <LinkContainer to="/NotFound">
+                        {/*<LinkContainer to="/NotFound">
                             <Button>Add post</Button>
-                        </LinkContainer>
+                        </LinkContainer>*/}
                     </ButtonToolbar>
                 </div>
 
@@ -39,4 +55,4 @@ class Header extends Component{
     }
 }
 
-export default Header;
+export default withRouter(Header);

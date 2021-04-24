@@ -12,3 +12,9 @@ registration:
 posts:
   path: /api/posts
   controller: App\Controller\PostController::posts
+  methods: GET
+
+addPost:
+  path: /api/post
+  controller: App\Controller\PostController::addPost
+  methods: POST

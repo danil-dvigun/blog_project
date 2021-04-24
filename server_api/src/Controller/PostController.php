@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Dto\Response\Transformer\PostResponseDtoTransformer;
+use App\Entity\Post;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,15 +26,41 @@ class PostController extends AbstractController
     }
 
 
-    public function posts(PostRepository $postRepository, UserRepository $userRepository): Response
+    public function posts(PostRepository $postRepository): Response
     {
 
-        $users = $userRepository->findAll();
-        /*$posts = $postRepository->findAll();*/
-        $test = $this->postResponseDtoTransformer->transformFromObjects($users);
+        $posts = $postRepository->findAll();
+        $test = $this->postResponseDtoTransformer->transformFromObjects($posts);
 
         $response = new Response();
         $response->setContent(json_encode($test));
+        $response->setStatusCode(Response::HTTP_OK );
+        return $response;
+        /*return $this->json([
+            'message' => 'Welcome to your new controller!',
+            'path' => 'src/Controller/PostController.php',
+        ]);*/
+    }
+
+    public function addPost(Request $request, UserRepository $userRepository, EntityManagerInterface $entityManager): Response
+    {
+        $postData = json_decode($request->getContent());
+        $userId = $request->credentials["user_id"]; //user_id
+        $user = $userRepository->findBy(["id"=> $userId]);
+        /*$posts = $postRepository->findAll();
+        $test = $this->postResponseDtoTransformer->transformFromObjects($posts);*/
+
+        $post = new Post();
+        $post->setTitle($postData->title);
+        $post->setText($postData->text);
+        $post->setDescription($postData->description);
+        $post->setOwner($user[0]);
+
+        $entityManager->persist($post);
+        $entityManager->flush();
+
+        $response = new Response();
+        $response->setContent(json_encode(["test" => "test"]));
         $response->setStatusCode(Response::HTTP_OK );
         return $response;
         /*return $this->json([
