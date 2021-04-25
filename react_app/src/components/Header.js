@@ -5,6 +5,11 @@ import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { LinkContainer } from 'react-router-bootstrap';
 import {Link, withRouter} from "react-router-dom";
+import {connect} from "react-redux";
+
+const mapStateToProps = state => {
+    return { userName: state.userName };
+};
 
 class Header extends Component{
     constructor(props) {
@@ -44,7 +49,9 @@ class Header extends Component{
                 </div>
 
                 <div id="rightBlock">
+
                     <ButtonToolbar className="custom-btn-toolbar">
+                        <span>Hello, {this.props.userName}</span>
                         <LinkContainer to="/authorization">
                             <Button>Sing in / Sing up</Button>
                         </LinkContainer>
@@ -55,4 +62,6 @@ class Header extends Component{
     }
 }
 
-export default withRouter(Header);
+const UserData = connect(mapStateToProps)(Header);
+
+export default withRouter(UserData);

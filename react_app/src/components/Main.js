@@ -11,8 +11,21 @@ import MyPosts from "./MyPosts";
 import AddPost from "./AddPost";
 import Posts from "./Posts";
 import Post from "./Post"
+import {getUser} from "../js/actions";
+import {connect} from "react-redux";
+
+
+function mapDispatchToProps(dispatch) {
+    return {
+        getUser: () => dispatch(getUser())
+    };
+}
 
 class Main extends Component{
+
+    componentWillMount() {
+        this.props.getUser();
+    }
 
     render(){
 
@@ -45,4 +58,10 @@ class Main extends Component{
         )
     }
 }
-export default Main;
+
+const UserForm = connect(
+    null,
+    mapDispatchToProps
+)(Main);
+
+export default UserForm;

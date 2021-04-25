@@ -78,6 +78,6 @@ class Posts extends Component{
         )
     }
 }
-const List = connect(mapStateToProps)(Posts);
+const ListOfPosts = connect(mapStateToProps)(Posts);
 
-export default List;
+export default ListOfPosts;

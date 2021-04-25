@@ -16,7 +16,7 @@ use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 
 class CustomAuthenticator extends AbstractGuardAuthenticator
 {
-    public const LOGIN_ROUTE = ['addPost'];
+    public const LOGIN_ROUTE = ['addPost', 'getUser'];
 
     /**
      * @var EntityManagerInterface

@@ -45,7 +45,8 @@ class PostController extends AbstractController
     public function addPost(Request $request, UserRepository $userRepository, EntityManagerInterface $entityManager): Response
     {
         $postData = json_decode($request->getContent());
-        $userId = $request->credentials["user_id"]; //user_id
+        /*$userId = $request->credentials["user_id"];*/
+        $userId = $this->getUser()->getId();
         $user = $userRepository->findBy(["id"=> $userId]);
         /*$posts = $postRepository->findAll();
         $test = $this->postResponseDtoTransformer->transformFromObjects($posts);*/

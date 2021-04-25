@@ -18,3 +18,8 @@ addPost:
   path: /api/post
   controller: App\Controller\PostController::addPost
   methods: POST
+
+getUser:
+  path: /api/user
+  controller: App\Controller\UserController::user
+  methods: GET
