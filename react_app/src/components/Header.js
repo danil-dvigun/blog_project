@@ -18,12 +18,12 @@ class Header extends Component{
         this.handleCheck = this.handleCheck.bind(this);
     }
 
-    handleCheck() {
+    handleCheck(path) {
         if(localStorage.getItem('Authorization') == null){
             alert("You must be logged in to add posts!")
         }
         else{
-            this.props.history.push('/addPost')
+            this.props.history.push(path)
         }
     }
 
@@ -35,10 +35,10 @@ class Header extends Component{
                         <LinkContainer to="/">
                             <Button>Home</Button>
                         </LinkContainer>
-                        <LinkContainer to="/myPosts">
+                        <LinkContainer to={`/posts/${this.props.user["name"]}`}>
                             <Button>My posts</Button>
                         </LinkContainer>
-                        <Button onClick={this.handleCheck}>Add post</Button>
+                        <Button onClick={() => this.handleCheck('/addPost')}>Add post</Button>
                         <LinkContainer to="/post/1">
                             <Button>My</Button>
                         </LinkContainer>

@@ -28,7 +28,6 @@ class PostController extends AbstractController
 
     public function posts(PostRepository $postRepository): Response
     {
-
         $posts = $postRepository->findAll();
         $dtoPosts = $this->postResponseDtoTransformer->transformFromObjects($posts);
 
@@ -36,10 +35,18 @@ class PostController extends AbstractController
         $response->setContent(json_encode($dtoPosts));
         $response->setStatusCode(Response::HTTP_OK );
         return $response;
-        /*return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/PostController.php',
-        ]);*/
+    }
+
+    public function postsByUser(PostRepository $postRepository, Request $request): Response
+    {
+        $userName = $request->get("user");
+        $posts = $postRepository->FindAllSQL();
+        $dtoPosts = $this->postResponseDtoTransformer->transformFromObjects($posts);
+
+        $response = new Response();
+        $response->setContent(json_encode(["s" => $dtoPosts]));
+        $response->setStatusCode(Response::HTTP_OK );
+        return $response;
     }
 
     public function addPost(Request $request, UserRepository $userRepository, EntityManagerInterface $entityManager): Response

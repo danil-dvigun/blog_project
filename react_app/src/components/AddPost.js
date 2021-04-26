@@ -23,6 +23,10 @@ class AddPost extends Component{
         }
     }
 
+    componentDidMount() {
+        this.props.getPosts();
+    }
+
 
     handleSend() {
         axios({

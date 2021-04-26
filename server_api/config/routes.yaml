@@ -14,6 +14,11 @@ posts:
   controller: App\Controller\PostController::posts
   methods: GET
 
+postsByUser:
+  path: /api/posts/{user}
+  controller: App\Controller\PostController::postsByUser
+  methods: GET
+
 addPost:
   path: /api/post
   controller: App\Controller\PostController::addPost

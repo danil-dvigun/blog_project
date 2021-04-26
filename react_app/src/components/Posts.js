@@ -18,10 +18,9 @@ function mapDispatchToProps(dispatch) {
 }
 
 class Posts extends Component{
-    constructor(props) {
+   /* constructor(props) {
         super(props);
-        /*this.state = { posts: []}*/
-    }
+    }*/
 
     componentDidMount() {
         this.props.getPosts();

@@ -45,7 +45,7 @@ class Main extends Component{
                         <Col id="col">
                             <Switch>
                                 <Route exact path="/" component={Posts} />
-                                <Route exact path="/myPosts" component={MyPosts} />
+                                <Route exact path="/posts/:user" component={MyPosts} />
                                 <Route  exact path="/addPost" component={AddPost} />
                                 <Route  exact path="/post/:id" component={Post} />
                             </Switch>

@@ -21,16 +21,19 @@ class PostRepository extends ServiceEntityRepository
 
     public function FindAllSQL(): array
     {
-        $conn = $this->getEntityManager()->getConnection();
+        $entityManager = $this->getEntityManager();
 
-        $sql = '
-            SELECT * FROM post p
-            ';
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
+        $dql = $entityManager->createQuery("
+            SELECT p FROM App\Entity\Post p
+            INNER JOIN App\Entity\User u on u.id = p.owner_id
+            "
+        );
+        /*$stmt = $conn->prepare($sql);
+        $stmt->execute();*/
+
 
         // returns an array of arrays (i.e. a raw data set)
-        return $stmt->fetchAll();
+        return $dql->getResult();
     }
 
     // /**
