@@ -1,9 +1,9 @@
-import { ADD_POST, GET_USER } from "../constants/action-types";
-
-export function addPost(payload) {
-    return { type: ADD_POST, payload }
-}
+import { GET_USER, GET_POSTS } from "../constants/action-types";
 
 export function getUser() {
     return { type: GET_USER }
+}
+
+export function getPosts() {
+    return { type: GET_POSTS }
 }

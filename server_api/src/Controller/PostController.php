@@ -30,10 +30,10 @@ class PostController extends AbstractController
     {
 
         $posts = $postRepository->findAll();
-        $test = $this->postResponseDtoTransformer->transformFromObjects($posts);
+        $dtoPosts = $this->postResponseDtoTransformer->transformFromObjects($posts);
 
         $response = new Response();
-        $response->setContent(json_encode($test));
+        $response->setContent(json_encode($dtoPosts));
         $response->setStatusCode(Response::HTTP_OK );
         return $response;
         /*return $this->json([

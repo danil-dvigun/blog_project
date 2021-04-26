@@ -12,7 +12,7 @@ class UserController extends AbstractController
     {
         $userData = $this->getUser();
         $response = new Response();
-        $response->setContent(json_encode(["user" => $userData->getUsername()]));
+        $response->setContent(json_encode(["name" => $userData->getUsername(), "userRoles" => $userData->getRoles()]));
         $response->setStatusCode(Response::HTTP_OK );
         return $response;
     }

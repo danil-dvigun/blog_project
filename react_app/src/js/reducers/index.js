@@ -2,24 +2,29 @@ import {ADD_POST} from "../constants/action-types";
 
 const initialState = {
     posts: [],
-    userName: "NoOne"
+    user: {name: "NoOne", userRoles:[]}
 };
 
 function rootReducer(state = initialState, action) {
-    if (action.type === ADD_POST) {
-        /*state.posts.push(action.payload);*/
+    if (action.type === "POSTS_LOADED") {
         return Object.assign({}, state, {
-            posts: state.posts.concat(action.payload)
+            posts: action.payload
+        });
+    }
+    if (action.type === "POSTS_ERRORED") {
+        return Object.assign({}, state, {
+            posts: []
         });
     }
     if (action.type === "USER_LOADED") {
+        console.log(action.payload)
         return Object.assign({}, state, {
-            userName: action.payload.user
+            user: action.payload
         });
     }
     if (action.type === "USER_ERRORED") {
         return Object.assign({}, state, {
-            userName: state.userName = "NoOne"
+            user: {name: "NoOne", userRoles:[]}
         });
     }
     return state;

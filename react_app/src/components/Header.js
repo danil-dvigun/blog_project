@@ -8,7 +8,7 @@ import {Link, withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 
 const mapStateToProps = state => {
-    return { userName: state.userName };
+    return { user: state.user };
 };
 
 class Header extends Component{
@@ -51,7 +51,7 @@ class Header extends Component{
                 <div id="rightBlock">
 
                     <ButtonToolbar className="custom-btn-toolbar">
-                        <span>Hello, {this.props.userName}</span>
+                        <span>Hello, {this.props.user["name"]}</span>
                         <LinkContainer to="/authorization">
                             <Button>Sing in / Sing up</Button>
                         </LinkContainer>

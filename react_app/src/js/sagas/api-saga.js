@@ -3,10 +3,11 @@ import '@babel/polyfill';
 import axios from "axios";
 
 export default function* watcherSaga() {
-    yield takeEvery("GET_USER", workerSaga);
+    yield takeEvery("GET_USER", userSaga);
+    yield takeEvery("GET_POSTS", postsSaga);
 }
 
-function* workerSaga() {
+function* userSaga() {
     try {
         const payload = yield call(getData);
         yield put({ type: "USER_LOADED", payload: payload.data });
@@ -15,13 +16,28 @@ function* workerSaga() {
     }
 }
 
+function* postsSaga() {
+    try {
+        const payload = yield call(getPosts);
+        yield put({ type: "POSTS_LOADED", payload: payload.data });
+    } catch (e) {
+        yield put({ type: "POSTS_ERRORED", payload: e });
+    }
+}
+
 function getData() {
-    /*console.log("запрос")*/
     return axios({
         method: 'get',
         url: '/api/user',
         headers:{
             Authorization: localStorage.getItem('Authorization')
         }
-        })
+    })
+}
+
+function getPosts() {
+    return axios({
+        method: 'get',
+        url: '/api/posts',
+    })
 }

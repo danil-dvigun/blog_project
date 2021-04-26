@@ -1,17 +1,9 @@
 import React, {Component} from "react";
-import { connect } from "react-redux";
-import { addPost } from "../js/actions/index";
 import {Form} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import {withRouter} from "react-router-dom";
 
-
-function mapDispatchToProps(dispatch) {
-    return {
-        addPost: post => dispatch(addPost(post))
-    };
-}
 
 class AddPost extends Component{
     constructor(props) {
@@ -33,15 +25,6 @@ class AddPost extends Component{
 
 
     handleSend() {
-        /*this.setState({is_sing_in: !this.state.is_sing_in})*/
-        let posts = {
-            title: this.state.title,
-            description: this.state.description,
-            text: this.state.text
-        }
-        this.props.addPost({ title: this.state.title,
-            description: this.state.description,
-            text: this.state.text });
         axios({
             method: 'post',
             url: '/api/post',
@@ -57,13 +40,6 @@ class AddPost extends Component{
         }).then(res =>{
             console.log(res)
             this.props.history.push('/')
-            /*localStorage.setItem('user', res.data.user);
-            localStorage.setItem('Authorization', res.headers.Authorization);
-            this.props.history.push('/')*/
-            /*let user = res.data.user;
-            let token = res.headers.token;
-            console.log(user)
-            console.log(token)*/
         })
             .catch(error =>{
                 if (error.response) {
@@ -106,9 +82,5 @@ class AddPost extends Component{
     }
 }
 
-const AddForm = connect(
-    null,
-    mapDispatchToProps
-)(AddPost);
 
-export default withRouter(AddForm);
+export default withRouter(AddPost);
